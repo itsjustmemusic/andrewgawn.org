@@ -92,6 +92,10 @@
     .wrap { padding: 0 16px; }
     section { padding: 36px 0; }
   }
+
+  .shots { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px 4px 16px; margin: 0 -4px; -webkit-overflow-scrolling: touch; }
+  .shots img { flex: none; width: 220px; height: auto; border-radius: 22px; scroll-snap-align: start; border: 1px solid var(--line); box-shadow: 0 8px 22px rgba(0,0,0,.18); background: var(--card); }
+  @media (max-width: 640px) { .shots img { width: 62vw; } }
 </style>
 </head>
 <body>
@@ -108,6 +112,19 @@
 </header>
 
 <main>
+  <section>
+    <div class="wrap">
+      <h2>Screenshots</h2>
+      <div class="shots" tabindex="0" aria-label="Screenshots: scroll sideways for more">
+        <img src="shots/1.jpg" alt="The speed limit for the road you're on" width="540" height="1170" loading="lazy">
+        <img src="shots/2.jpg" alt="Check recent drives: confirm limits that need a look" width="540" height="1170" loading="lazy">
+        <img src="shots/3.jpg" alt="Driver: licence and vehicle set the limits" width="540" height="1170" loading="lazy">
+        <img src="shots/4.jpg" alt="Alerts: new limits, over the limit, schools nearby" width="540" height="1170" loading="lazy">
+        <img src="shots/5.jpg" alt="Map packs: download the areas you drive" width="540" height="1170" loading="lazy">
+      </div>
+    </div>
+  </section>
+
   <section>
     <div class="wrap">
       <h2>What RoadLimit does</h2>
@@ -182,7 +199,7 @@
     <div class="wrap">
       <h2>Free, with an optional tip</h2>
       <p class="lead">RoadLimit is free, with no adverts. If it helps you, you can leave a tip in the app: it keeps the maps updated every month, and unlocks nothing. RoadLimit Pro is under development.</p>
-      <p>Questions, wrong limits or ideas? Email <a href="mailto:lekkyapp@gmail.com">lekkyapp@gmail.com</a>. I'm a solo developer and reply as soon as I can.</p>
+      <p>Questions, wrong limits or ideas? Email <a href="mailto:apps@andrewgawn.org">apps@andrewgawn.org</a>. I'm a solo developer and reply as soon as I can.</p>
     </div>
   </section>
 </main>
@@ -190,7 +207,7 @@
 <footer>
   <div class="wrap">
     <span>© 2026 <a href="../">Andrew Gawn</a> · Speed limit data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> (ODbL)</span>
-    <span><a href="privacy/">Privacy policy</a> · <a href="mailto:lekkyapp@gmail.com">Contact</a></span>
+    <span><a href="privacy/">Privacy policy</a> · <a href="mailto:apps@andrewgawn.org">Contact</a></span>
   </div>
 </footer>
 </body>

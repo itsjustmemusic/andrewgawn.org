@@ -95,6 +95,10 @@
     .wrap { padding: 0 16px; }
     section { padding: 36px 0; }
   }
+
+  .shots { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px 4px 16px; margin: 0 -4px; -webkit-overflow-scrolling: touch; }
+  .shots img { flex: none; width: 220px; height: auto; border-radius: 22px; scroll-snap-align: start; border: 1px solid var(--line); box-shadow: 0 8px 22px rgba(0,0,0,.18); background: var(--card); }
+  @media (max-width: 640px) { .shots img { width: 62vw; } }
 </style>
 </head>
 <body>
@@ -111,6 +115,19 @@
 </header>
 
 <main>
+  <section>
+    <div class="wrap">
+      <h2>Screenshots</h2>
+      <div class="shots" tabindex="0" aria-label="Screenshots: scroll sideways for more">
+        <img src="shots/1.jpg" alt="Dashboard: balance, days left and Add Entry" width="540" height="1170" loading="lazy">
+        <img src="shots/2.jpg" alt="Top-up statistics: when to top up and when the meter reaches zero" width="540" height="1170" loading="lazy">
+        <img src="shots/3.jpg" alt="Add Entry: a meter reading or a top-up" width="540" height="1110" loading="lazy">
+        <img src="shots/4.jpg" alt="Cost: what the next 30 days will cost" width="540" height="1170" loading="lazy">
+        <img src="shots/5.jpg" alt="Cost graph: how a year's cost adds up" width="540" height="1170" loading="lazy">
+      </div>
+    </div>
+  </section>
+
   <section>
     <div class="wrap">
       <h2>What Lekky does</h2>
@@ -167,7 +184,7 @@
     <div class="wrap">
       <h2>Free, with an optional tip</h2>
       <p class="lead">Lekky is free. If it helps you, you can leave a tip in the app; a tip is a thank-you and unlocks nothing. Lekky Pro, a separate app with extra features, is on the way.</p>
-      <p>Questions, bugs or ideas? Email <a href="mailto:lekkyapp@gmail.com">lekkyapp@gmail.com</a>. I'm a solo developer and reply as soon as I can.</p>
+      <p>Questions, bugs or ideas? Email <a href="mailto:apps@andrewgawn.org">apps@andrewgawn.org</a>. I'm a solo developer and reply as soon as I can.</p>
     </div>
   </section>
 </main>
@@ -175,7 +192,7 @@
 <footer>
   <div class="wrap">
     <span>© 2026 <a href="../">Andrew Gawn</a></span>
-    <span><a href="privacy/">Privacy policy</a> · <a href="mailto:lekkyapp@gmail.com">Contact</a></span>
+    <span><a href="privacy/">Privacy policy</a> · <a href="mailto:apps@andrewgawn.org">Contact</a></span>
   </div>
 </footer>
 </body>
