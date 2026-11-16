@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Andrew Gawn: apps</title>
-<meta name="description" content="Simple, private Android apps by Andrew Gawn, an independent developer. No accounts, no ads, no tracking.">
+<meta name="description" content="Simple, private Android apps by Andrew Gawn, an independent developer: Lekky and RoadLimit. No accounts, no ads, no tracking.">
 <link rel="canonical" href="https://andrewgawn.org/">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -49,6 +49,7 @@
   .app h3 { margin: 0 0 4px; font-size: 22px; }
   .app p { margin: 0; color: var(--muted); }
   .app .status { display: inline-block; margin-top: 8px; font-size: 14px; font-weight: 600; color: var(--accent); }
+  .app + .app { margin-top: 12px; }
   .more { color: var(--muted); margin: 16px 0 0; }
   section { padding-bottom: 40px; }
   .values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
@@ -84,6 +85,14 @@
         <span class="status">Coming soon to Google Play →</span>
       </div>
     </a>
+    <a class="app" href="roadlimit/">
+      <img src="roadlimit/icon.png" alt="" width="84" height="84">
+      <div>
+        <h3>RoadLimit</h3>
+        <p>The speed limit for the road you're on, spoken, anywhere in the UK.</p>
+        <span class="status">Coming soon to Google Play →</span>
+      </div>
+    </a>
     <p class="more">More apps are on the way.</p>
   </section>
 
@@ -92,13 +101,13 @@
     <div class="values">
       <div>No accounts<span>Open the app and use it</span></div>
       <div>No ads or tracking<span>Nothing is sold or watched</span></div>
-      <div>Your data, your phone<span>Back up to files you keep</span></div>
+      <div>Your data, your phone<span>Nothing leaves it unless you send it</span></div>
     </div>
   </section>
 </main>
 
 <footer>
-  <div class="wrap">© 2026 Andrew Gawn · Lekky: <a href="mailto:lekkyapp@gmail.com">lekkyapp@gmail.com</a> · <a href="lekky/privacy/">Lekky privacy policy</a></div>
+  <div class="wrap">© 2026 Andrew Gawn · Contact: <a href="mailto:lekkyapp@gmail.com">lekkyapp@gmail.com</a> · Privacy: <a href="lekky/privacy/">Lekky</a> · <a href="roadlimit/privacy/">RoadLimit</a></div>
 </footer>
 </body>
 </html>
