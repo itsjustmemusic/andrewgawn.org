@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Andrew Gawn: apps</title>
+<meta name="description" content="Simple, private Android apps by Andrew Gawn, an independent developer. No accounts, no ads, no tracking.">
+<link rel="canonical" href="https://andrewgawn.org/">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>
+  :root {
+    --bg: #f6f2ea;
+    --card: #fffdf8;
+    --text: #26231f;
+    --muted: #6b6357;
+    --accent: #00796b;
+    --line: #e4dccb;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1a1916;
+      --card: #24221e;
+      --text: #f2ece0;
+      --muted: #b7ad9c;
+      --accent: #4db6ac;
+      --line: #36322b;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", Arial, sans-serif;
+    font-size: 17px; line-height: 1.55;
+  }
+  a { color: var(--accent); }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+  header { padding: 72px 0 40px; }
+  h1 { font-size: clamp(36px, 7vw, 54px); line-height: 1.05; margin: 0 0 12px; letter-spacing: -0.02em; }
+  .intro { color: var(--muted); font-size: 19px; margin: 0; max-width: 34em; }
+  h2 { font-size: 15px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 0 0 14px; }
+  .app {
+    display: flex; gap: 20px; align-items: center; text-decoration: none; color: inherit;
+    background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 20px;
+  }
+  .app:hover, .app:focus-visible { border-color: var(--accent); }
+  .app img { width: 84px; height: 84px; border-radius: 20px; flex: none; }
+  .app h3 { margin: 0 0 4px; font-size: 22px; }
+  .app p { margin: 0; color: var(--muted); }
+  .app .status { display: inline-block; margin-top: 8px; font-size: 14px; font-weight: 600; color: var(--accent); }
+  .more { color: var(--muted); margin: 16px 0 0; }
+  section { padding-bottom: 40px; }
+  .values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .values div { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 16px; font-weight: 600; }
+  .values span { display: block; font-weight: 400; color: var(--muted); font-size: 15px; margin-top: 2px; }
+  footer { border-top: 1px solid var(--line); padding: 24px 0 48px; color: var(--muted); font-size: 15px; }
+  @media (max-width: 640px) {
+    body { font-size: 16px; }
+    .wrap { padding: 0 16px; }
+    header { padding: 48px 0 32px; }
+    .values { grid-template-columns: 1fr; }
+    .app { gap: 16px; padding: 16px; }
+    .app img { width: 64px; height: 64px; border-radius: 16px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>Andrew Gawn</h1>
+    <p class="intro">I make simple, private Android apps for everyday things. One developer, built with care, and your data stays on your phone.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <section>
+    <h2>Apps</h2>
+    <a class="app" href="lekky/">
+      <img src="lekky/icon.png" alt="" width="84" height="84">
+      <div>
+        <h3>Lekky</h3>
+        <p>Prepaid electricity, under control: readings, top-ups, costs and alerts before you run out.</p>
+        <span class="status">Coming soon to Google Play →</span>
+      </div>
+    </a>
+    <p class="more">More apps are on the way.</p>
+  </section>
+
+  <section>
+    <h2>How I make them</h2>
+    <div class="values">
+      <div>No accounts<span>Open the app and use it</span></div>
+      <div>No ads or tracking<span>Nothing is sold or watched</span></div>
+      <div>Your data, your phone<span>Back up to files you keep</span></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Andrew Gawn · Lekky: <a href="mailto:lekkyapp@gmail.com">lekkyapp@gmail.com</a> · <a href="lekky/privacy/">Lekky privacy policy</a></div>
+</footer>
+</body>
+</html>

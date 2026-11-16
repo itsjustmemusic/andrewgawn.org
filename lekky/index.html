@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lekky: prepaid electricity, under control</title>
+<meta name="description" content="Lekky is an Android app for prepaid (pay-as-you-go) electricity meters: readings, top-ups, days of credit left, costs and alerts before you run out. No account, no ads, no tracking.">
+<meta property="og:title" content="Lekky: prepaid electricity, under control">
+<meta property="og:description" content="Readings, top-ups, costs and alerts before you run out. No account, no ads, no tracking.">
+<meta property="og:image" content="https://andrewgawn.org/lekky/share.jpg">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://andrewgawn.org/lekky/">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>
+  :root {
+    --bg: #f4ecdb;
+    --bg-2: #ebe0c8;
+    --card: #fffaf0;
+    --text: #2b2620;
+    --muted: #6b6357;
+    --accent: #00796b;
+    --accent-text: #ffffff;
+    --line: #e0d4bb;
+    --glow: rgba(196, 230, 90, 0.45);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1a16;
+      --bg-2: #24211c;
+      --card: #2a2721;
+      --text: #f2ece0;
+      --muted: #b7ad9c;
+      --accent: #4db6ac;
+      --accent-text: #10201e;
+      --line: #3a362e;
+      --glow: rgba(196, 230, 90, 0.18);
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.55;
+  }
+  a { color: var(--accent); }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 20px; }
+
+  header.hero {
+    background: radial-gradient(ellipse at 22% 40%, var(--glow), transparent 55%), var(--bg-2);
+    border-bottom: 1px solid var(--line);
+  }
+  .hero .wrap {
+    display: flex; align-items: center; gap: 40px;
+    padding-top: 56px; padding-bottom: 56px;
+  }
+  .hero img { width: 168px; height: 168px; border-radius: 36px; flex: none;
+    box-shadow: 0 12px 32px rgba(0,0,0,.18); }
+  .hero h1 { font-size: clamp(44px, 8vw, 72px); line-height: 1; margin: 0 0 10px; letter-spacing: -0.02em; }
+  .hero .tag { font-size: clamp(20px, 3.4vw, 28px); font-weight: 600; margin: 0 0 8px; }
+  .hero .sub { color: var(--muted); margin: 0 0 22px; }
+  .soon {
+    display: inline-block; padding: 12px 20px; border-radius: 999px;
+    background: var(--accent); color: var(--accent-text); font-weight: 600;
+  }
+
+  section { padding: 48px 0; border-bottom: 1px solid var(--line); }
+  section:last-of-type { border-bottom: 0; }
+  h2 { font-size: 28px; margin: 0 0 8px; }
+  .lead { color: var(--muted); margin: 0 0 28px; max-width: 46em; }
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  @media (max-width: 700px) { .grid { grid-template-columns: 1fr; } }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 22px; }
+  .card h3 { margin: 0 0 8px; font-size: 19px; display: flex; align-items: center; gap: 10px; }
+  .card h3 .dot { width: 30px; height: 30px; border-radius: 50%; display: inline-grid; place-items: center;
+    background: var(--accent); color: var(--accent-text); font-size: 16px; flex: none; }
+  .card ul { margin: 0; padding-left: 20px; }
+  .card li { margin: 4px 0; }
+
+  .promise { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+  .promise div { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 18px 20px; font-weight: 600; }
+  .promise span { display: block; font-weight: 400; color: var(--muted); font-size: 15px; margin-top: 4px; }
+
+  footer { padding: 32px 0 48px; color: var(--muted); font-size: 15px; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
+
+  @media (max-width: 640px) {
+    body { font-size: 16px; }
+    .hero .wrap { flex-direction: column; text-align: center; gap: 24px; padding-top: 40px; padding-bottom: 40px; }
+    .hero img { width: 128px; height: 128px; border-radius: 28px; }
+    .wrap { padding: 0 16px; }
+    section { padding: 36px 0; }
+  }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <img src="icon.png" alt="Lekky app icon: a glowing light bulb" width="168" height="168">
+    <div>
+      <h1>Lekky</h1>
+      <p class="tag">Prepaid electricity, under control</p>
+      <p class="sub">An Android app for prepaid (pay-as-you-go) electricity meters. Add your readings and top-ups; Lekky shows how much credit you have now, how long it will last, and what your electricity really costs.</p>
+      <span class="soon">Coming soon to Google Play</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap">
+      <h2>What Lekky does</h2>
+      <p class="lead">Everything comes from the readings and top-ups you enter, so the figures are yours, not guesses.</p>
+      <div class="grid">
+        <div class="card">
+          <h3><span class="dot" aria-hidden="true">£</span>Know where you stand</h3>
+          <ul>
+            <li>Your estimated balance now and the days until your meter reaches zero</li>
+            <li>Averages from your own readings: recent, 7-day, 30-day, weighted and total, with optional seasonal adjustment</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3><span class="dot" aria-hidden="true">!</span>Never run out</h3>
+          <ul>
+            <li>Low balance and time-to-top-up alerts</li>
+            <li>Reading reminders on the schedule you choose</li>
+            <li>Quiet hours and snooze, so alerts don't wake you</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3><span class="dot" aria-hidden="true">↗</span>See what you spend</h3>
+          <ul>
+            <li>What you spent yesterday, last week, last month or last year</li>
+            <li>Estimates for the days ahead, or any dates you pick</li>
+            <li>A cost-per-day graph</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3><span class="dot" aria-hidden="true">✓</span>Catch mistakes</h3>
+          <ul>
+            <li>Validation spots readings that don't add up, duplicate entries and long gaps</li>
+            <li>Fix them in a tap</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Your data stays yours</h2>
+      <p class="lead">Lekky has no servers. What you enter stays on your phone.</p>
+      <div class="promise">
+        <div>No account<span>Nothing to sign up for</span></div>
+        <div>No ads<span>And no tracking or analytics</span></div>
+        <div>On your phone<span>Back up to a file you keep</span></div>
+        <div>8 languages<span>And 111 currencies, light or dark</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Free, with an optional tip</h2>
+      <p class="lead">Lekky is free. If it helps you, you can leave a tip in the app; a tip is a thank-you and unlocks nothing. Lekky Pro, a separate app with extra features, is on the way.</p>
+      <p>Questions, bugs or ideas? Email <a href="mailto:lekkyapp@gmail.com">lekkyapp@gmail.com</a>. I'm a solo developer and reply as soon as I can.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 <a href="../">Andrew Gawn</a></span>
+    <span><a href="privacy/">Privacy policy</a> · <a href="mailto:lekkyapp@gmail.com">Contact</a></span>
+  </div>
+</footer>
+</body>
+</html>
