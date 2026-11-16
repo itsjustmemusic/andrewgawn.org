@@ -51,9 +51,10 @@
 
   header.hero { background: var(--hero); color: var(--hero-text); }
   .hero .wrap { display: flex; align-items: center; gap: 40px; padding-top: 56px; padding-bottom: 56px; }
-  .hero img { width: 168px; height: 168px; border-radius: 36px; flex: none; box-shadow: 0 0 0 1px #1f2933; }
-  .hero h1 { font-size: clamp(44px, 8vw, 72px); line-height: 1; margin: 0 0 10px; letter-spacing: -0.02em; }
-  .hero h1 .o { color: #c8102e; }
+  .hero > .wrap > img { width: 168px; height: 168px; border-radius: 36px; flex: none; box-shadow: 0 0 0 1px #1f2933; }
+  .hero h1 { margin: 0 0 14px; line-height: 0; }
+  /* The RoadLimit name as in the app (About): Barlow, the mark as the "o", red i-dot. */
+  .hero h1 img { width: clamp(240px, 46vw, 400px); height: auto; border-radius: 0; box-shadow: none; }
   .hero .tag { font-size: clamp(20px, 3.4vw, 28px); font-weight: 600; margin: 0 0 8px; }
   .hero .sub { color: var(--hero-muted); margin: 0 0 22px; max-width: 34em; }
   .soon { display: inline-block; padding: 12px 20px; border-radius: 999px; background: #c8102e; color: #fff; font-weight: 600; }
@@ -88,7 +89,7 @@
     body { font-size: 16px; }
     .hero .wrap { flex-direction: column; text-align: center; gap: 24px; padding-top: 40px; padding-bottom: 40px; }
     .hero .sub { margin-left: auto; margin-right: auto; }
-    .hero img { width: 128px; height: 128px; border-radius: 28px; }
+    .hero > .wrap > img { width: 128px; height: 128px; border-radius: 28px; }
     .wrap { padding: 0 16px; }
     section { padding: 36px 0; }
   }
@@ -103,7 +104,7 @@
   <div class="wrap">
     <img src="icon.png" alt="RoadLimit app icon: a road inside a red speed limit ring" width="168" height="168">
     <div>
-      <h1>R<span class="o">o</span>adLimit</h1>
+      <h1><img src="wordmark.png" alt="RoadLimit" width="880" height="162"></h1>
       <p class="tag">UK speed limits, spoken</p>
       <p class="sub">An Android app that shows the speed limit for the road you're on, anywhere in the UK, and tells you when it changes. Set it up before you drive, put the phone in a holder, and leave it.</p>
       <span class="soon">Coming soon to Google Play</span>
