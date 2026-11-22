@@ -1,215 +1,54 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>RoadLimit: UK speed limits, spoken</title>
-<meta name="description" content="RoadLimit is an Android app that shows the speed limit for the road you're on, anywhere in the UK, and says it when it changes. No account, no ads, no tracking.">
-<meta property="og:title" content="RoadLimit: UK speed limits, spoken">
-<meta property="og:description" content="The speed limit for the road you're on, anywhere in the UK, spoken as it changes. No account, no ads, no tracking.">
-<meta property="og:image" content="https://andrewgawn.org/roadlimit/share.jpg">
-<meta property="og:type" content="website">
-<link rel="canonical" href="https://andrewgawn.org/roadlimit/">
-<link rel="icon" type="image/png" href="favicon.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RoadLimit privacy policy</title>
+<link rel="canonical" href="https://andrewgawn.org/roadlimit/privacy/">
+<link rel="icon" type="image/png" href="../favicon.png">
 <style>
-  :root {
-    --bg: #f3f4f6;
-    --card: #ffffff;
-    --text: #15191e;
-    --muted: #5b6573;
-    --accent: #c8102e;
-    --accent-text: #ffffff;
-    --line: #dfe3e8;
-    --hero: #0a0e13;
-    --hero-text: #eef2f6;
-    --hero-muted: #a9b5c3;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #0f1318;
-      --card: #171c23;
-      --text: #e9eef3;
-      --muted: #9aa7b6;
-      --accent: #ff5a66;
-      --accent-text: #ffffff;
-      --line: #263039;
-      --hero: #0a0e13;
-      --hero-text: #eef2f6;
-      --hero-muted: #a9b5c3;
-    }
-  }
-  * { box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; }
-  body {
-    margin: 0; background: var(--bg); color: var(--text);
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", Arial, sans-serif;
-    font-size: 17px; line-height: 1.55;
-  }
-  a { color: var(--accent); }
-  .wrap { max-width: 980px; margin: 0 auto; padding: 0 20px; }
+:root{--bg:#f3f4f6;--fg:#15191e;--muted:#5b6573;--accent:#c8102e}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1318;--fg:#e9eef3;--muted:#9aa7b6;--accent:#ff5a66}}
+.back{display:inline-block;margin-bottom:8px}
+body{background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;max-width:720px;margin:0 auto;padding:24px 16px}
+h1{font-size:1.8em;margin-bottom:.2em} h2{font-size:1.2em;margin-top:1.6em} a{color:var(--accent)} code{font-size:.95em}
+</style></head><body>
+<a class="back" href="../">← RoadLimit</a>
+<h1>RoadLimit privacy policy</h1>
 
-  header.hero { background: var(--hero); color: var(--hero-text); }
-  .hero .wrap { display: flex; align-items: center; gap: 40px; padding-top: 56px; padding-bottom: 56px; }
-  .hero > .wrap > img { width: 168px; height: 168px; border-radius: 36px; flex: none; box-shadow: 0 0 0 1px #1f2933; }
-  .hero h1 { margin: 0 0 14px; line-height: 0; }
-  /* The RoadLimit name as in the app (About): Barlow, the mark as the "o", red i-dot. */
-  .hero h1 img { width: clamp(240px, 46vw, 400px); height: auto; border-radius: 0; box-shadow: none; }
-  .hero .tag { font-size: clamp(20px, 3.4vw, 28px); font-weight: 600; margin: 0 0 8px; }
-  .hero .sub { color: var(--hero-muted); margin: 0 0 22px; max-width: 34em; }
-  .soon { display: inline-block; padding: 12px 20px; border-radius: 999px; background: #c8102e; color: #fff; font-weight: 600; }
+<p><strong>Effective date:</strong> 21 November 2026</p>
+<p><strong>App:</strong> RoadLimit (Android), package <code>com.roadlimit.app</code></p>
+<p><strong>Developer:</strong> RoadLimit</p>
+<p><strong>Contact:</strong> <a href="mailto:apps@andrewgawn.org">apps@andrewgawn.org</a></p>
 
-  section { padding: 48px 0; border-bottom: 1px solid var(--line); }
-  section:last-of-type { border-bottom: 0; }
-  h2 { font-size: 28px; margin: 0 0 8px; }
-  .lead { color: var(--muted); margin: 0 0 28px; max-width: 46em; }
-  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-  @media (max-width: 700px) { .grid { grid-template-columns: 1fr; } }
-  .card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 22px; }
-  .card h3 { margin: 0 0 8px; font-size: 19px; display: flex; align-items: center; gap: 10px; }
-  .card h3 .dot { width: 30px; height: 30px; border-radius: 50%; display: inline-grid; place-items: center;
-    background: var(--accent); color: var(--accent-text); font-size: 15px; font-weight: 700; flex: none; }
-  .card ul { margin: 0; padding-left: 20px; }
-  .card li { margin: 4px 0; }
-
-  .promise { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
-  .promise div { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 18px 20px; font-weight: 600; }
-  .promise span { display: block; font-weight: 400; color: var(--muted); font-size: 15px; margin-top: 4px; }
-
-  .safety { background: var(--card); border: 1px solid var(--line); border-left: 6px solid var(--accent);
-    border-radius: 18px; padding: 22px 24px; }
-  .safety p { margin: 0 0 10px; }
-  .safety ul { margin: 0; padding-left: 20px; }
-  .safety li { margin: 4px 0; }
-
-  footer { padding: 32px 0 48px; color: var(--muted); font-size: 15px; }
-  footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
-
-  @media (max-width: 640px) {
-    body { font-size: 16px; }
-    .hero .wrap { flex-direction: column; text-align: center; gap: 24px; padding-top: 40px; padding-bottom: 40px; }
-    .hero .sub { margin-left: auto; margin-right: auto; }
-    .hero > .wrap > img { width: 128px; height: 128px; border-radius: 28px; }
-    .wrap { padding: 0 16px; }
-    section { padding: 36px 0; }
-  }
-
-  .shots { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px 4px 16px; margin: 0 -4px; -webkit-overflow-scrolling: touch; }
-  .shots img { flex: none; width: 220px; height: auto; border-radius: 22px; scroll-snap-align: start; border: 1px solid var(--line); box-shadow: 0 8px 22px rgba(0,0,0,.18); background: var(--card); }
-  @media (max-width: 640px) { .shots img { width: 62vw; } }
-</style>
-</head>
-<body>
-<header class="hero">
-  <div class="wrap">
-    <img src="icon.png" alt="RoadLimit app icon: a road inside a red speed limit ring" width="168" height="168">
-    <div>
-      <h1><img src="wordmark.png" alt="RoadLimit" width="880" height="162"></h1>
-      <p class="tag">UK speed limits, spoken</p>
-      <p class="sub">An Android app that shows the speed limit for the road you're on, anywhere in the UK, and tells you when it changes. Set it up before you drive, put the phone in a holder, and leave it.</p>
-      <span class="soon">Coming soon to Google Play</span>
-    </div>
-  </div>
-</header>
-
-<main>
-  <section>
-    <div class="wrap">
-      <h2>Screenshots</h2>
-      <div class="shots" tabindex="0" aria-label="Screenshots: scroll sideways for more">
-        <img src="shots/1.jpg" alt="The speed limit for the road you're on" width="540" height="1170" loading="lazy">
-        <img src="shots/2.jpg" alt="Check recent drives: confirm limits that need a look" width="540" height="1170" loading="lazy">
-        <img src="shots/3.jpg" alt="Driver: licence and vehicle set the limits" width="540" height="1170" loading="lazy">
-        <img src="shots/4.jpg" alt="Alerts: new limits, over the limit, schools nearby" width="540" height="1170" loading="lazy">
-        <img src="shots/5.jpg" alt="Map packs: download the areas you drive" width="540" height="1170" loading="lazy">
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <h2>What RoadLimit does</h2>
-      <p class="lead">Speed limits come from OpenStreetMap, the free map made by volunteers. Where the map doesn't say, RoadLimit makes a careful guess and marks it, so you always know which is which.</p>
-      <div class="grid">
-        <div class="card">
-          <h3><span class="dot" aria-hidden="true">30</span>The limit, clearly</h3>
-          <ul>
-            <li>A big speed limit sign, easy to read at a glance, with your speed beside it</li>
-            <li>New limits spoken as you pass them, or a chime, or silent</li>
-            <li>A warning when you go over, at the limit or a little before</li>
-            <li>A guessed limit is marked "30?"</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3><span class="dot" aria-hidden="true">!</span>Your alerts, your way</h3>
-          <ul>
-            <li>Voice or chime, volume, vibrate and a coloured flash round the screen edge</li>
-            <li>"School nearby" as you pass a school</li>
-            <li>L and R plates, including Northern Ireland's 45 mph for restricted drivers</li>
-            <li>A low battery warning while driving</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3><span class="dot" aria-hidden="true">↗</span>Works with your sat-nav</h3>
-          <ul>
-            <li>Press Home and the sign floats over your sat-nav</li>
-            <li>Quiet during phone calls, then the limit is said again</li>
-            <li>Nothing to touch while you drive</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3><span class="dot" aria-hidden="true">✓</span>Offline, and easy to put right</h3>
-          <ul>
-            <li>Map packs for Northern Ireland, Scotland, Wales and nine English regions, downloaded on Wi-Fi and updated every month</li>
-            <li>Check recent drives: say what a sign really showed, and RoadLimit uses your limit there on your phone</li>
-            <li>Open any spot in OpenStreetMap to fix the map for everyone</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <h2>Private by design</h2>
-      <p class="lead">RoadLimit has no servers of its own. Your position stays on your phone.</p>
-      <div class="promise">
-        <div>No account<span>Nothing to sign up for</span></div>
-        <div>No ads<span>And no tracking or analytics</span></div>
-        <div>On your phone<span>Map areas are downloaded about 2 km at a time, never your exact position</span></div>
-        <div>UK only<span>England, Scotland, Wales and Northern Ireland</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <h2>Drive safely</h2>
-      <div class="safety">
-        <p><strong>RoadLimit is a driving aid. The speed limit is a maximum, not a target.</strong></p>
-        <ul>
-          <li>Always obey the road signs: the map can be wrong or out of date.</li>
-          <li>RoadLimit can't see temporary, variable or school-time limits.</li>
-          <li>Set it up before you set off. It's illegal to hold or use a phone while driving.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <h2>Free, with an optional tip</h2>
-      <p class="lead">RoadLimit is free, with no adverts. If it helps you, you can leave a tip in the app: it keeps the maps updated every month, and unlocks nothing. RoadLimit Pro is under development.</p>
-      <p>Questions, wrong limits or ideas? Email <a href="mailto:apps@andrewgawn.org">apps@andrewgawn.org</a>. I'm a solo developer and reply as soon as I can.</p>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="wrap">
-    <span>© 2026 <a href="../">Andrew Gawn</a> · Speed limit data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> (ODbL)</span>
-    <span><a href="privacy/">Privacy policy</a> · <a href="mailto:apps@andrewgawn.org">Contact</a></span>
-  </div>
-</footer>
-</body>
-</html>
+<p>RoadLimit shows the speed limit for the road you're driving on in the UK. It has no accounts, no adverts, no analytics and no tracking. This policy explains the little it does with your data.</p>
+<h2>Your location</h2>
+<p>RoadLimit uses your phone's location only while the app is open (on screen, or as the floating sign), to work out which road you're on and its speed limit, and whether a map pack on your phone covers where you are. It never uses your location in the background, and it does not store or send your position anywhere.</p>
+<p>While the start screen or Settings is open, RoadLimit also reads the phone's motion sensor (accelerometer) to tell whether the phone is lying still, so that a GPS error indoors isn't taken for driving. The readings stay on the phone and aren't stored or sent. If you turn on Record drives on the Testing page, RoadLimit also reads it while driving and saves how much the phone shakes with your recorded drives (see below).</p>
+<p>To show limits, RoadLimit needs map data for the area around you. It gets it in one of two ways:</p>
+<ul>
+<li><strong>Map packs.</strong> A whole region's map data, downloaded when you choose to from GitHub (github.com, run by GitHub, Inc.). The request says which region you chose, not where you are.</li>
+<li><strong>Map areas while driving.</strong> Where there's no map pack, RoadLimit asks a public OpenStreetMap server for the roads in an area about 2 km across around you: overpass-api.de (FOSSGIS e.V., Germany), overpass.private.coffee or overpass.kumi.systems. The request contains that area, not your exact position. Like any website, these servers see your phone's internet address, and may keep it in their logs under their own policies.</li>
+</ul>
+<p>Map data © OpenStreetMap contributors, under the Open Database Licence.</p>
+<h2>What stays on your phone</h2>
+<p>Your settings, the map data RoadLimit has downloaded, and RoadLimit's own log of what it did. The log can include the roads and places you drove that day. Old log entries are replaced automatically.</p>
+<p>If you turn on <strong>Record drives</strong> on the Testing page, RoadLimit also saves your drives (positions and what it decided) on the phone for 30 days.</p>
+<p>RoadLimit keeps a short list of where the speed limit it showed changed on your drives (the place, the road and the limit), on the phone for 7 days, so you can check them in <strong>Settings → Check recent drives</strong>. If you say a sign showed something different, RoadLimit uses your limit for that road on your phone only. It keeps each of these corrections, with the road's name, the place and the direction you were going (so it can find the road again when the map changes), until the map agrees or you remove it in Your corrections. You can turn Check recent drives off at the top of its screen: RoadLimit then stops adding to the list, and you choose whether to delete the list straight away or let it go after 7 days. Your corrections keep working until you remove them, one at a time or with <strong>Delete all corrections</strong>.</p>
+<p>The <strong>Look on Street View</strong> and <strong>Open in OpenStreetMap</strong> buttons in Check recent drives and Your corrections open that place in Google Maps or on openstreetmap.org, only when you tap them. RoadLimit sends nothing itself. Google's or OpenStreetMap's own privacy policy then applies, and if you're signed in to Google, Google may link the place to your account.</p>
+<p>RoadLimit doesn't keep a record of your speed or of times you went over the limit, unless you turn on Record drives.</p>
+<p>None of this leaves your phone unless you choose to share it.</p>
+<h2>When you share something</h2>
+<p><strong>Send feedback</strong> (Settings → About) and <strong>Share drives</strong> (Testing page) make a file and open your email app with it attached, addressed to us at <a href="mailto:apps@andrewgawn.org">apps@andrewgawn.org</a> (or your phone's share menu if there's no email app). Nothing is sent until you send it, and you can change where it goes. Feedback contains only your note, RoadLimit's version, your phone's Android version and your settings. Share drives (for testers) contains your recorded drives, RoadLimit's log, the map areas used, the places you marked "wrong limit", Check recent drives' list (if kept), your answers and your corrections (places, roads, limits and directions). We use what you send only to fix and improve RoadLimit, and delete it when it's no longer needed.</p>
+<h2>Speech and sounds</h2>
+<p>Spoken limits use your phone's own text-to-speech. RoadLimit sends it only the words to say.</p>
+<p>To stay quiet during phone calls, RoadLimit checks whether the phone is ringing or on a call (an ordinary or internet call). It never learns who is calling or anything about the call, and this check never leaves your phone.</p>
+<p>If you turn on "Say 'wrong limit' to mark it" (Testing page), RoadLimit uses the microphone for 10 seconds after each spoken limit, listening only for the words "wrong limit". Speech is recognised on your phone by its own speech recognition; RoadLimit doesn't record or keep any audio, and nothing you say is sent anywhere. When it hears "wrong limit", it saves where the limit was spoken, the road and the limit shown, with your drives on the phone, so you can send it with Share drives. The microphone is never used otherwise, and the setting is off unless you turn it on.</p>
+<h2>Tips</h2>
+<p>If you choose to give a tip (Settings, Support RoadLimit), Google Play takes the payment, as with any purchase on Google Play. RoadLimit never sees your card or payment details; it only learns from Google Play that a tip went through, so it can say thank you. Tips unlock nothing, and nothing about them is kept on your phone or sent to us.</p>
+<h2>Children</h2>
+<p>RoadLimit is meant for drivers and isn't directed at children.</p>
+<h2>Deleting your data</h2>
+<p>Uninstalling RoadLimit deletes everything it stored. You can also delete map packs and map areas saved while driving in Settings → Map data, recorded drives on the Testing page, your corrections in Check recent drives (one at a time, or Delete all corrections), and its list when you turn it off.</p>
+<h2>Changes</h2>
+<p>If this policy changes, the new version will be posted here with a new date.</p>
+<h2>Contact</h2>
+<p>Email <a href="mailto:apps@andrewgawn.org">apps@andrewgawn.org</a>.</p>
+</body></html>
